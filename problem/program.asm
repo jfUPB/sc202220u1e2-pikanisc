@@ -11,27 +11,27 @@
 // if key = f --> draw else if key = c --> clear
 	@j
 	M = D // save key
-	@70  // press f
-	D = D-A
+	@0  // press f
+	D = D-M
 	@FILL
 	D;JEQ
 	@j
 	D = M
-	@67
-	D = D - A
+	@1
+	D = D - M
 	@CLEAR
 	D;JEQ
 	@START
 	0;JMP
-
+ 
 (FILL)
-	@value
+	@value // @17
 	M = -1
 	@DRAW
 	0;JMP
 
 (CLEAR)
-	@value
+	@value // @17
 	M = 0
 	@DRAW
 	0;JMP
@@ -39,20 +39,20 @@
 (DRAW)
 	@SCREEN
 	D = A
-	@i
+	@i  // @18
 	M = D
 
 (LOOP)
-	@value
+	@value // @17
 	D = M
-	@i
+	@i     // @18
 	A = M
 	M = D
-	@i
+	@i   //@18
 	M = M + 1
 	@24576
 	D = A
-	@i
+	@i   //@18
 	D = M - D
 	@LOOP
 	D;JNE
