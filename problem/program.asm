@@ -8,10 +8,9 @@
 	0;JMP
 
 (FILLORCLEAR)
-// if key = f --> draw else if key = c --> clear
 	@j
 	M = D // save key
-	@0  // press f
+	@0 
 	D = D-M
 	@FILL
 	D;JEQ
